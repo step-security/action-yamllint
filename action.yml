@@ -77,6 +77,13 @@ runs:
           fi
         fi
       shell: bash
+    - name: Install yamllint
+      run: |
+        if ! command -v yamllint &> /dev/null; then
+          echo "yamllint not found, installing..."
+          pip install 'yamllint>=1.25.0'
+        fi
+      shell: bash
     - id: yamllint
       run: |
         # export LOGFILE=$(mktemp yamllint-XXXXXX)
