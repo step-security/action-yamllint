@@ -45,7 +45,7 @@ jobs:
   lintAllTheThings:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v6
       - name: yaml-lint
         uses: step-security/action-yamllint@v3
         with:
@@ -63,7 +63,7 @@ jobs:
   lintAllTheThings:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v6
       - name: yaml-lint
         uses: step-security/action-yamllint@v3
 ```
@@ -96,13 +96,13 @@ jobs:
   lintAllTheThings:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v6
       - id: yaml-lint
         uses: step-security/action-yamllint@v3
 
       - run: echo ${{ steps.yaml-lint.outputs.logfile }}
 
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: yamllint-logfile
