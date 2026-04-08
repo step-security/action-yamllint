@@ -81,7 +81,7 @@ runs:
       run: |
         if ! command -v yamllint &> /dev/null; then
           echo "yamllint not found, installing..."
-          pip install 'yamllint>=1.25.0'
+          sudo apt-get update -qq && sudo apt-get install -y -qq yamllint
         fi
       shell: bash
     - id: yamllint
